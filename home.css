@@ -484,3 +484,39 @@ background-image: url(assets/Arrow\ 2.svg);
 background-size: contain;
 background-repeat: no-repeat;
 }
+.s4 {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Video layer */
+.s4video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    width: 100vh;
+    height: 100vw;
+    object-fit: cover;
+    z-index: 1;
+}
+
+/* Text layer ABOVE video */
+.videotext {
+position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    color: #FFB800;
+    font-family: "ex";
+    font-size: 96px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: normal;
+    pointer-events: none;
+    width: 1200px;
+    text-align: center;
+}
