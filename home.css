@@ -1,0 +1,235 @@
+:root {
+    --black:  #000000;
+    --white:#FCF8EC;
+    --title: linear-gradient(90deg, #000 0%, #666 100%);
+    --yhover:#FFD74D;
+    --shadow: rgba(0, 0, 0, 0.25);
+    --boarder:rgba(255, 255, 255, 0.25);
+    --back:rgba(255, 255, 255, 0.15);
+    --yellow:#FFB800;
+    --grey: #666;
+}
+
+@font-face {
+    font-family: '911';
+    src: url(fonts/911v2.ttf);
+}
+
+@font-face {
+    font-family: 'ex';
+    src: url(fonts/Exo2-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: 'po';
+    src: url(fonts/Poppins-Regular.ttf);
+}
+* {
+    margin: 0%;
+    padding: 0%;
+    font-family: 'ex';
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+   background:var(--yellow);
+}
+header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;      
+    top: 30px;
+    left: 0;
+    z-index: 1000;          
+    pointer-events: none; 
+}
+
+nav{
+    pointer-events: auto; 
+}
+nav{
+    background: var(--back);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 82px;
+    border: 1px solid var(--boarder);
+    box-shadow: 0 8px 32px var(--shadow);
+    display: inline-flex;
+    padding: 22px 61px;
+    align-items: flex-start;
+    gap: 83px;
+}
+h1{
+    color: var(--grey);
+    font-family: "911";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+      transition: color 0.3s ease, transform 0.3s ease; /* smooth transition */
+}
+h1:hover {
+    color:var(--black);        /* change color on hover */
+    transform: scale(1.05); /* slight zoom in */
+    cursor: pointer;        /* pointer to show interactivity */
+}
+.white{color: var(--white) ;font-size: 40px;}
+.selected{color: var(--black);}
+.nline{
+    width: 61px;
+    height: 2px;
+    background-color: var(--black);
+}
+.s1{
+    width: 100%;
+    height: 1048px;
+}
+.s1d1{
+    width: 100%;
+    height: 741px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.s1d1child{
+    width: 869.127px;
+    height: 687px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;   /* 👈 IMPORTANT */
+}
+
+.p1{
+    width: 269.127px;
+    height: 498px;
+    aspect-ratio: 269.13/498.00;
+    background-image: url(assets/p1.png);
+    background-repeat: no-repeat;
+    background-size:cover ;
+}
+.p2{
+    width: 287px;
+    height: 687px;
+    aspect-ratio: 287/687;
+    background-image: url(assets/p2.png);
+    background-repeat: no-repeat;
+    background-size:contain ;
+}
+.p3{
+    width: 269.127px;
+    height: 498px;
+    aspect-ratio: 269.13/498.00;
+    background-image: url(assets/p3.png);
+    background-repeat: no-repeat;
+    background-size:cover ;
+}
+.p4{
+    width: 100%;
+    height: 92px;
+    aspect-ratio: 378/23;
+    background-image: url(assets/p4.png);
+    background-repeat: no-repeat;
+    background-size:cover ;
+}
+.p911{
+    position: absolute;     /* 👈 remove from flex flow */
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;            /* 👈 above images */
+    color: #FFB800;
+    font-family: "ex";
+    font-size: 406.038px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 1;
+    pointer-events: none;   /* optional */
+}
+.s1car{
+    width: 1081px;
+    height: 482px;
+    aspect-ratio: 1081/482;
+    background-image: url(assets/3d-car-with-simple-background-removebg-preview\ 1.png);
+  background-repeat: no-repeat;
+    background-size:contain ;
+    position: absolute;
+    top: 400px;
+    z-index: 10;
+    display: flex;
+    justify-self: center;
+}
+.explorebt {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 46px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    display: inline-flex;
+    padding: 15px 41px;
+    align-items: center;
+    gap: 28px;
+    position: absolute;
+    left: 70%;
+    top: 80%;
+    z-index: 12;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.explorebt:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+}
+
+.explore {
+    color: var(--white);
+    font-family: 'po';
+    font-size: 32px;
+    font-weight: 800;
+    transition: color 0.3s ease;
+}
+
+.arrowcircle {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+.arrow {
+    width: 36px;
+    height: 36px;
+    display: block;
+    transition: transform 0.3s ease;
+}
+.explorebt:hover .arrowcircle {
+    background: var(--yhover); 
+}
+
+.title{
+    font-family: "911";
+    font-size: 200px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    background:var(--title);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: rotate(-3.246deg);
+    display: flex;
+    justify-self: center;
+    margin-top: 40px;
+    }
