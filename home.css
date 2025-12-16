@@ -9,6 +9,7 @@
     --yellow:#FFB800;
     --grey: #666;
     --ycircle:linear-gradient(180deg, #997100 0%, #FFBC00 100%);
+    --l:linear-gradient(90deg, #FFF 0%, #999 100%);
 }
 
 @font-face {
@@ -27,7 +28,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'ex';
+    font-family: '911';
     box-sizing: border-box;
 }
 body{
@@ -308,12 +309,12 @@ h1:hover {
     z-index: 1; 
 }
 .learnbt {
-    background: rgba(255, 255, 255, 0.15);
+    background: var(--back);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
     border-radius: 40px;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--boarder);
+    box-shadow: 0 6px 24px var(--shadow);
     display: inline-flex;
     justify-content: center;
     display: inline-flex;
@@ -322,16 +323,16 @@ h1:hover {
     gap: 26.109px;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    align-self: flex-end; /* push to bottom-right in column layout */
+    align-self: flex-end; 
     z-index: 10;
 }
 .learnbt:hover {
     transform: scale(1.05); 
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 10px 28px var(--shadow);
 }
 
 .l {
-   background: linear-gradient(90deg, #FFF 0%, #999 100%);
+   background: var(--l);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -339,5 +340,147 @@ h1:hover {
 
 .ycircle {
    border-radius: 31.703px;
-    background: linear-gradient(180deg, #997100 0%, #FFBC00 100%);
+    background:var(--ycircle);
+}
+/* section3 */
+.s3 {
+    width: 100%;
+    height: 521px;
+    background-color:var(--black);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Container for collection + cars */
+.s3d1 {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 439px;
+}
+
+/* Collection stays fixed */
+.thecollection {
+  width: 367px;
+  height: 439px;
+  background: var(--yellow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  flex-shrink: 0;
+}
+.tc{
+    color: #000;
+font-size: 64px;
+font-style: normal;
+font-weight: 400;
+line-height: 102.265%; /* 65.45px */
+width: 275.997px;
+}
+/* Wrapper for scrolling */
+.car-wrapper {
+  position: relative;
+  flex: 1;
+  height: 439px;
+  overflow: hidden; /* hide scrollbar */
+  margin-left: -20px; /* optional adjustment */
+}
+
+/* Horizontal scroll container */
+.carssd {
+  display: flex;
+
+  height: 100%;
+  padding-left: 20px; /* small padding */
+  flex-shrink: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+}
+.carssd::-webkit-scrollbar {
+  display: none;
+}
+
+/* Cards */
+.cd {
+  width: 363px;
+  height: 438px;
+  border: 1px solid #FFBC00;
+  background: #FFF;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  cursor: grab;
+}
+.cd:active {
+  cursor: grabbing;
+}
+
+
+.carname {
+    color: #000;
+    font-size: 16.852px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    align-self: center;
+}
+.car3d {
+    width: 334.115px;
+    height: 221.873px;
+    display: flex;
+    align-self: center;
+}
+.carinfo {
+    color: #000;
+    font-family: "ex";
+    font-size: 16.852px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    width: 238px;
+}
+.carprice {
+    color: #000;
+    font-family: "ex";
+    font-size: 33.704px;
+    display: flex;
+    align-self: flex-end;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.car3d model-viewer {
+    width: 100%;
+    height: 100%;
+    transform: scale(1.3); /* 0.8 = slightly zoomed out */
+    transform-origin: center center;
+}
+.scrolld{
+    width: 375px;
+height: 60px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+flex-direction: row;
+justify-self: flex-end;
+}
+.st{
+    color: #FFF;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 188.565%; /* 60.341px */
+    text-transform: uppercase;
+}
+.arrow2{
+    width: 167px;
+height: 10px;
+background-image: url(assets/Arrow\ 2.svg);
+background-size: contain;
+background-repeat: no-repeat;
 }
