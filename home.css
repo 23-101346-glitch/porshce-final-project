@@ -10,6 +10,9 @@
     --grey: #666;
     --ycircle:linear-gradient(180deg, #997100 0%, #FFBC00 100%);
     --l:linear-gradient(90deg, #FFF 0%, #999 100%);
+    --blue:#37578B;
+    --red:#DA1111;
+    --green:#43A44C;
 }
 
 @font-face {
@@ -24,6 +27,10 @@
 @font-face {
     font-family: 'po';
     src: url(fonts/Poppins-Regular.ttf);
+}
+@font-face {
+    font-family: 'pob';
+    src: url(fonts/Poppins-ExtraBold.ttf);
 }
 * {
     margin: 0;
@@ -351,7 +358,6 @@ h1:hover {
     flex-direction: column;
 }
 
-/* Container for collection + cars */
 .s3d1 {
   display: flex;
   position: relative;
@@ -359,7 +365,6 @@ h1:hover {
   height: 439px;
 }
 
-/* Collection stays fixed */
 .thecollection {
   width: 367px;
   height: 439px;
@@ -371,28 +376,28 @@ h1:hover {
   flex-shrink: 0;
 }
 .tc{
-    color: #000;
+    color: var(--black);
 font-size: 64px;
 font-style: normal;
 font-weight: 400;
 line-height: 102.265%; /* 65.45px */
 width: 275.997px;
 }
-/* Wrapper for scrolling */
+
 .car-wrapper {
   position: relative;
   flex: 1;
   height: 439px;
-  overflow: hidden; /* hide scrollbar */
-  margin-left: -20px; /* optional adjustment */
+  overflow: hidden; 
+  margin-left: -20px; 
 }
 
-/* Horizontal scroll container */
+
 .carssd {
   display: flex;
 
   height: 100%;
-  padding-left: 20px; /* small padding */
+  padding-left: 20px;
   flex-shrink: 0;
   overflow-x: auto;
   overflow-y: hidden;
@@ -406,8 +411,8 @@ width: 275.997px;
 .cd {
   width: 363px;
   height: 438px;
-  border: 1px solid #FFBC00;
-  background: #FFF;
+  border: 1px solid var(--yellow);
+  background:var(--white);
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
@@ -421,7 +426,7 @@ width: 275.997px;
 
 
 .carname {
-    color: #000;
+    color: var(--black);
     font-size: 16.852px;
     font-style: normal;
     font-weight: 400;
@@ -436,7 +441,7 @@ width: 275.997px;
     align-self: center;
 }
 .carinfo {
-    color: #000;
+    color: var(--black);
     font-family: "ex";
     font-size: 16.852px;
     font-style: normal;
@@ -445,7 +450,7 @@ width: 275.997px;
     width: 238px;
 }
 .carprice {
-    color: #000;
+    color: var(--black);
     font-family: "ex";
     font-size: 33.704px;
     display: flex;
@@ -470,7 +475,7 @@ flex-direction: row;
 justify-self: flex-end;
 }
 .st{
-    color: #FFF;
+    color: var(--white);
     font-size: 32px;
     font-style: normal;
     font-weight: 400;
@@ -484,6 +489,7 @@ background-image: url(assets/Arrow\ 2.svg);
 background-size: contain;
 background-repeat: no-repeat;
 }
+/* section4 */
 .s4 {
     width: 100vw;
     height: 100vh;
@@ -491,7 +497,7 @@ background-repeat: no-repeat;
     position: relative;
 }
 
-/* Video layer */
+
 .s4video {
     position: absolute;
     top: 50%;
@@ -503,14 +509,14 @@ background-repeat: no-repeat;
     z-index: 1;
 }
 
-/* Text layer ABOVE video */
+
 .videotext {
 position: absolute;
     top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
-    color: #FFB800;
+    color: var(--yellow);
     font-family: "ex";
     font-size: 96px;
     font-style: italic;
@@ -519,4 +525,125 @@ position: absolute;
     pointer-events: none;
     width: 1200px;
     text-align: center;
+}
+/* section5 */
+.s5{
+    width: 100%;
+    height: 900px;
+    background-image: url(assets/s4.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+
+.s5 article{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.s5d1{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    justify-content: space-between;
+}
+.carname2{
+    color: var(--white);
+    font-family: "911 Porscha";
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.race{
+ 
+    color: var(--white);
+    font-family: 'pob';
+    font-size: 653.763px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 1;
+    white-space: nowrap;
+    pointer-events: none;       
+    z-index: 0;
+}
+.colorandbtdiv{
+    display: inline-flex;
+    align-items: flex-end;
+    gap: 138px;
+    width: 796px;
+    height: 98px;
+    margin-left: 350px;
+
+}
+
+.colordiv{
+    width: 325px;
+    height: 39px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.colorbt{
+    width: 39px;
+    height: 39px;
+    border-radius: 50%;
+    border: 1px solid var(--white);
+
+}
+
+.blue{background-color:  var(--blue);}
+.red{background-color:  var(--red);}
+.black{background-color: var(--black);}
+.whitee{background-color:  var(--white);}
+.green{background-color:var(--green);}
+
+.divcolorcar{
+    width: 986px;
+    height: 617px;
+    position: absolute;
+    top:20% ;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.color3dmodeldiv{
+    width: 920px;
+    height: 575px;
+    aspect-ratio: 8 / 5;
+    z-index: 4;
+    position: relative;
+    overflow: hidden;        
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.d3{
+ 
+    width: 220%;         
+    height: 220%;
+    transform: none;        
+    transform-origin: center center;
+}
+.circlecolor{
+    width: 986px;
+    height: 314px;
+    background-image: url(assets/Ellipse\ 3.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 50%;
 }
