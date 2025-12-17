@@ -273,53 +273,72 @@
             <h2 class="videotext">THE NEW PORSCHE 911</h2>
         </section>
      <section class="s5">
-    <article>
-        <div class="s5d1">
-            <h2 class="carname2">Porsche Carrera GT</h2>
-            <h3 class="race">RACE</h3>
+            <article>
+                <div class="s5d1">
+                    <h2 class="carname2">Porsche Carrera GT</h2>
+                    <h3 class="race">RACE</h3>
 
-            <div class="colorandbtdiv">
-                <!-- COLOR BUTTONS -->
-                <div class="colordiv">
-                    <div class="colorbt red" data-color="#DA1111"></div>
-                    <div class="colorbt black" data-color="#000000"></div>
-                    <div class="colorbt green" data-color="#43A44C"></div>
-                    <div class="colorbt whitee" data-color="#FFFFFF"></div>
-                    <div class="colorbt blue" data-color="#37578B"></div>
+                    <div class="colorandbtdiv">
+                        <!-- COLOR BUTTONS -->
+                        <div class="colordiv">
+                            <div class="colorbt red" data-color="#DA1111"></div>
+                            <div class="colorbt black" data-color="#000000"></div>
+                            <div class="colorbt green" data-color="#43A44C"></div>
+                            <div class="colorbt whitee" data-color="#FFFFFF"></div>
+                            <div class="colorbt blue" data-color="#37578B"></div>
+                        </div>
+
+                        <!-- BUY BUTTON -->
+                        <button class="learnbt">
+                            <h2 class="explore l">BUY NOW</h2>
+                            <div class="arrowcircle ycircle">
+                                <svg class="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                                    <path d="M29.4141 2C29.4141 0.895429 28.5186 0 27.4141 0L9.41406 0C8.30949 0 7.41406 0.89543 7.41406 2C7.41406 3.10457 8.30949 4 9.41406 4L25.4141 4L25.4141 20C25.4141 21.1046 26.3095 22 27.4141 22C28.5186 22 29.4141 21.1046 29.4141 20L29.4141 2ZM1.41406 28L2.82828 29.4142L28.8283 3.41421L27.4141 2L25.9998 0.585786L-0.000151038 26.5858L1.41406 28Z" fill="black"/>
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
                 </div>
 
-                <!-- BUY BUTTON -->
-                <button class="learnbt">
-                    <h2 class="explore l">BUY NOW</h2>
-                    <div class="arrowcircle ycircle">
-                        <svg class="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
-                            <path d="M29.4141 2C29.4141 0.895429 28.5186 0 27.4141 0L9.41406 0C8.30949 0 7.41406 0.89543 7.41406 2C7.41406 3.10457 8.30949 4 9.41406 4L25.4141 4L25.4141 20C25.4141 21.1046 26.3095 22 27.4141 22C28.5186 22 29.4141 21.1046 29.4141 20L29.4141 2ZM1.41406 28L2.82828 29.4142L28.8283 3.41421L27.4141 2L25.9998 0.585786L-0.000151038 26.5858L1.41406 28Z" fill="black"/>
-                        </svg>
+                <!-- 3D MODEL -->
+                <div class="divcolorcar">
+                    <div class="color3dmodeldiv">
+                        <model-viewer 
+                            id="carModel"
+                            class="d3"
+                            src="models/2015_porsche_boxster_gts_718.glb" 
+                            alt="3D Porsche"
+                            camera-controls
+                            auto-rotate
+                            disable-zoom
+                            max-camera-orbit="360deg 75deg">
+                        </model-viewer>
                     </div>
-                </button>
-            </div>
-        </div>
 
-        <!-- 3D MODEL -->
-        <div class="divcolorcar">
-            <div class="color3dmodeldiv">
-                <model-viewer 
-                    id="carModel"
-                    class="d3"
-                    src="models/2015_porsche_boxster_gts_718.glb" 
-                    alt="3D Porsche"
-                    camera-controls
-                    auto-rotate
-                    disable-zoom
-                    max-camera-orbit="360deg 75deg">
-                </model-viewer>
-            </div>
-
-            <div class="circlecolor"></div>
-        </div>
-    </article>
-</section>
-
+                    <div class="circlecolor"></div>
+                </div>
+            </article>
+        </section>
+        <section class="s6">
+            <article>
+                <div class="s6d1">
+                    <div class="s6titlediv">
+                        <h2 class="s6title"> technical specs</h2>
+                        <div class="s6line"></div>
+                    </div>
+                    <div class="s6d2">
+                        <ul class="s6list">
+                            <li>Technical Specifications</li>
+                            <li>Specs & Performance</li>
+                            <li>Performance Specs</li>
+                            <li>Vehicle Specifications</li>
+                             <li>Tech Specs</li>
+                        </ul>
+                        <div class="s6img"></div>
+                    </div>
+                </div>
+            </article>
+        </section>
     </main>
     <script src="home.js"></script>
 </body>
