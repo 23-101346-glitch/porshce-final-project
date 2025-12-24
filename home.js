@@ -1,12 +1,23 @@
-
 window.addEventListener('DOMContentLoaded', () => {
     const carContainer = document.querySelector('.carssd');
 
     carContainer.addEventListener('wheel', (e) => {
-        e.preventDefault(); // prevent vertical scroll
-        carContainer.scrollLeft += e.deltaY; // scroll horizontally
-    });
+        const scrollLeft = carContainer.scrollLeft;
+        const maxScrollLeft = carContainer.scrollWidth - carContainer.clientWidth;
+
+        // How much the container would scroll
+        const proposedScroll = scrollLeft + e.deltaY;
+
+        if (proposedScroll >= 0 && proposedScroll <= maxScrollLeft) {
+            // Scroll horizontally and prevent vertical scroll
+            e.preventDefault();
+            carContainer.scrollLeft = proposedScroll;
+        }
+        // If proposedScroll < 0 (start) or > maxScrollLeft (end), do nothing
+        // → vertical scroll will happen naturally
+    }, { passive: false });
 });
+
 
 const modelViewer = document.querySelector('#carModel');
 const colorButtons = document.querySelectorAll('.colorbt');
