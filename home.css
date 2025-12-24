@@ -13,6 +13,9 @@
     --blue:#37578B;
     --red:#DA1111;
     --green:#43A44C;
+    --s911:linear-gradient(180deg, #000 37.97%, #FFB800 100%);
+    --h6:linear-gradient(180deg, #000 37.97%);
+    --background:rgba(0,0,0,0.55);
 }
 main{
     width: 100%;
@@ -699,7 +702,7 @@ position: absolute;
     transition: color 0.3s ease;
 }
 
-/* Add a subtle underline on hover */
+
 .s6title::after {
     content: "";
     position: absolute;
@@ -712,7 +715,7 @@ position: absolute;
 }
 
 .s6title:hover {
-    color: #FFD74D; /* slightly brighter */
+    color: var(--yhover); 
 }
 
 .s6title:hover::after {
@@ -756,7 +759,7 @@ position: absolute;
     background-size: contain;
     background-repeat: no-repeat;
 }
-
+/* section 7 */
 .s7{
     width: 100%;
     height: 800px;
@@ -764,7 +767,7 @@ position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative; /* 🔑 REQUIRED */
+    position: relative; 
     overflow: hidden;
 }
 
@@ -776,50 +779,46 @@ position: absolute;
     flex-direction: column;
     align-items: center;
     pointer-events: none;
-    z-index: 1; /* 👈 behind */
+    z-index: 1;
 }
 
-/* PORSCHE */
 h6{
     font-family: "st";
     font-size: 201.69px;
     font-weight: 400;
     line-height: 1;
-    
     white-space: nowrap;
-    background: linear-gradient(180deg, #000 37.97%);
+    background: var(--h6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 
-/* 911 */
 .s911{
     font-family: "st";
     font-size: 746.252px;
     font-weight: 400;
     line-height: 0.75;
     margin-top: -140px;
-    white-space: nowrap; /* 🔥 MOST IMPORTANT */
+    white-space: nowrap;
     display: block;
     max-width: 100%;
-    background: linear-gradient(180deg, #000 37.97%, #FFB800 100%);
+    background: var(--s911);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 .s7d{
-    position: absolute;        /* 🔥 take it out of flow */
+    position: absolute;      
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* 🎯 perfect centering */
-
+    transform: translate(-50%, -50%); 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-height: 637.69px;
+    height: 637.69px;
     width: 1149.291px;
-    z-index: 10;               /* 👑 ABOVE text */
+    z-index: 10;              
 
     
 }
@@ -828,59 +827,125 @@ height: 637.69px;
     height: 441.342px;
     aspect-ratio: 966.45/441.34;
 
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 .hun{
     width: 100%;
     height: 100%;
     transform: scale(2.0);
 }
+
 .Hotspot {
-    width: 80px;
-    height: 30px;
-  
-    background-color:var(--white);
+    width: 50px;
+    height: 23.2px;
+    background-color: var(--white);
     font-weight: bold;
-    font-size: 12px;
+    font-size: 9px;
     font-family: 'po';
+    border-radius: 5px;
     display: flex;
+    color:var(--red);
     align-items: center;
     justify-content: center;
-    border: 2px solid #fff;
+    border: 2px solid var(--white);
     cursor: pointer;
-    position: absolute; /* model-viewer positions them automatically */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    position: absolute;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
 .Hotspot:hover {
     transform: scale(1.2);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+    box-shadow: var(--shadow);
 }
 
-.hotspot-info {
+
+.photosdiv {
+    width: 1161.367px;
+    height: 196.694px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.photo {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s ease;
+}
+
+.photo::after {
+    content: '';
     position: absolute;
-    background: rgba(0,0,0,0.85);
-    color: var(--white); /* FIX */
-    padding: 10px 15px;
-    border-radius: 8px;
-    font-family: 'po';
-    font-size: 14px;
-    max-width: 220px;
-    pointer-events: none;
+    inset: 0;
+    background:var(--background);
     opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    z-index: 1000;
+    transition: opacity 0.4s ease;
 }
 
-.hotspot-info.show {
+.photo-overlay {
+    position: absolute;
+    inset: 0;
+    padding: 16px;
+    color: var(--white);
+    z-index: 2;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: opacity 0.4s ease;
+}
+
+.photo-overlay h4 {
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.photo-overlay p {
+    font-size: 11px;
+    line-height: 1.4;
+    font-family: 'po';
+}
+
+.photo.active {
+    transform: scale(1.2);
+}
+
+.photo.active::after {
     opacity: 1;
-    transform: translateY(0);
 }
-.hotspot-info h3 {
-    font-size: 16px;
-    margin-bottom: 5px;
+
+.photo.active .photo-overlay {
+    opacity: 1;
 }
-.hotspot-info p {
-    margin: 0;
+
+.hood {
+    width: 279.583px;
+    height: 196.352px;
+    background-image: url(assets/hood\ Group\ 52.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.interior {
+    width: 442px;
+    height: 197px;
+    background-image: url(assets/interior\ image\ 51.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.logoo {
+    width: 163.927px;
+    height: 196.352px;
+    background-image: url(assets/logoimage\ 31.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.wheel {
+    width: 180px;
+    height: 195px;
+    background-image: url(assets/wheel\ Group\ 53.png);
+    background-size: contain;
+    background-repeat: no-repeat;
 }

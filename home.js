@@ -32,29 +32,25 @@ modelViewer.addEventListener('load', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const hotspots = document.querySelectorAll('.Hotspot');
-    const infoBox = document.getElementById('hotspotInfo');
-    const titleEl = document.getElementById('hotspotTitle');
-    const descEl = document.getElementById('hotspotDesc');
+    const map = {
+        'hotspot-hood': '.hood',
+        'hotspot-interior': '.interior',
+        'hotspot-logo': '.logoo',
+        'hotspot-wheel': '.wheel'
+    };
 
-    hotspots.forEach(hotspot => {
-        hotspot.addEventListener('click', (e) => {
-            e.stopPropagation();
+    Object.keys(map).forEach(hotspotClass => {
+        const hotspot = document.querySelector(`.${hotspotClass}`);
+        const photo = document.querySelector(map[hotspotClass]);
 
-            titleEl.textContent = hotspot.dataset.title;
-            descEl.textContent = hotspot.dataset.description;
+        if (!hotspot || !photo) return;
 
-            const rect = hotspot.getBoundingClientRect();
+        hotspot.addEventListener('click', () => {
+            document.querySelectorAll('.photo')
+                .forEach(p => p.classList.remove('active'));
 
-            infoBox.style.left = rect.right + 10 + 'px';
-            infoBox.style.top = rect.top + window.scrollY + 'px';
-
-            infoBox.classList.add('show');
+            photo.classList.add('active');
         });
-    });
-
-    document.addEventListener('click', () => {
-        infoBox.classList.remove('show');
     });
 
 });
