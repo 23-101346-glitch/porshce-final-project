@@ -14,6 +14,10 @@
     --red:#DA1111;
     --green:#43A44C;
 }
+main{
+    width: 100%;
+    overflow: hidden;
+}
 
 @font-face {
     font-family: '911';
@@ -31,6 +35,10 @@
 @font-face {
     font-family: 'pob';
     src: url(fonts/Poppins-ExtraBold.ttf);
+}
+@font-face {
+    font-family: 'st';
+    src: url(fonts/StretchPro.otf);
 }
 * {
     margin: 0;
@@ -503,7 +511,7 @@ background-repeat: no-repeat;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(-90deg);
-    width: 100vh;
+    width:100%;
     height: 100vw;
     object-fit: cover;
     z-index: 1;
@@ -553,6 +561,7 @@ position: absolute;
     align-items: center;
     position: relative;
     z-index: 1;
+    overflow: hidden;
     justify-content: space-around;
 }
 .carname2{
@@ -746,4 +755,132 @@ position: absolute;
     background-image: url(assets/s6img.png);
     background-size: contain;
     background-repeat: no-repeat;
+}
+
+.s7{
+    width: 100%;
+    height: 800px;
+    background-color: var(--yellow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* 🔑 REQUIRED */
+    overflow: hidden;
+}
+
+
+.porsche911{
+    position: relative;
+    display: flex;
+    gap: 100px;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+    z-index: 1; /* 👈 behind */
+}
+
+/* PORSCHE */
+h6{
+    font-family: "st";
+    font-size: 201.69px;
+    font-weight: 400;
+    line-height: 1;
+    
+    white-space: nowrap;
+    background: linear-gradient(180deg, #000 37.97%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* 911 */
+.s911{
+    font-family: "st";
+    font-size: 746.252px;
+    font-weight: 400;
+    line-height: 0.75;
+    margin-top: -140px;
+    white-space: nowrap; /* 🔥 MOST IMPORTANT */
+    display: block;
+    max-width: 100%;
+    background: linear-gradient(180deg, #000 37.97%, #FFB800 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.s7d{
+    position: absolute;        /* 🔥 take it out of flow */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 🎯 perfect centering */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+height: 637.69px;
+    width: 1149.291px;
+    z-index: 10;               /* 👑 ABOVE text */
+
+    
+}
+.hotspotscar{
+    width: 966.449px;
+    height: 441.342px;
+    aspect-ratio: 966.45/441.34;
+
+    /* overflow: hidden; */
+}
+.hun{
+    width: 100%;
+    height: 100%;
+    transform: scale(2.0);
+}
+.Hotspot {
+    width: 80px;
+    height: 30px;
+  
+    background-color:var(--white);
+    font-weight: bold;
+    font-size: 12px;
+    font-family: 'po';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #fff;
+    cursor: pointer;
+    position: absolute; /* model-viewer positions them automatically */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.Hotspot:hover {
+    transform: scale(1.2);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+
+.hotspot-info {
+    position: absolute;
+    background: rgba(0,0,0,0.85);
+    color: var(--white); /* FIX */
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-family: 'po';
+    font-size: 14px;
+    max-width: 220px;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+
+.hotspot-info.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+.hotspot-info h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+.hotspot-info p {
+    margin: 0;
 }

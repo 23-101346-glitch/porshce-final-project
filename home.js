@@ -29,3 +29,32 @@ modelViewer.addEventListener('load', () => {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    const hotspots = document.querySelectorAll('.Hotspot');
+    const infoBox = document.getElementById('hotspotInfo');
+    const titleEl = document.getElementById('hotspotTitle');
+    const descEl = document.getElementById('hotspotDesc');
+
+    hotspots.forEach(hotspot => {
+        hotspot.addEventListener('click', (e) => {
+            e.stopPropagation();
+
+            titleEl.textContent = hotspot.dataset.title;
+            descEl.textContent = hotspot.dataset.description;
+
+            const rect = hotspot.getBoundingClientRect();
+
+            infoBox.style.left = rect.right + 10 + 'px';
+            infoBox.style.top = rect.top + window.scrollY + 'px';
+
+            infoBox.classList.add('show');
+        });
+    });
+
+    document.addEventListener('click', () => {
+        infoBox.classList.remove('show');
+    });
+
+});

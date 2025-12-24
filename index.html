@@ -104,7 +104,7 @@
                                 <h2 class="carname">porsche straenversion</h2>
                                 <div class="car3d">
                                     <model-viewer 
-                                        src="models/1998_porsche_911_gt1_straenversion.glb" 
+                                        src="models/1998_porsche_911_gt1_straenversion 1 .glb" 
                                         alt="3D Porsche" 
                                         camera-controls 
                                         auto-rotate 
@@ -339,6 +339,98 @@
                 </div>
             </article>
         </section>
+        <section class="s7">
+                <article class="porsche911">
+                    <h6>PORSCHE</h6>
+                    <h2 class="s911">911</h2>
+                </article>
+                    <div class="s7d">
+                            <div class="hotspotscar">
+                                    <model-viewer 
+                                       id="carModel"
+                                    src="models/1998_porsche_911_gt1_straenversion.glb" 
+                                    ar 
+                                    class="hun"
+                                    ar-modes="webxr scene-viewer quick-look" 
+                                    camera-controls 
+                                    disable-zoom
+                                    auto-rotate
+                                    tone-mapping="neutral" 
+                                    poster="poster.webp" 
+                                
+                                    camera-orbit="0deg 75deg auto"
+                                    min-camera-orbit="-180deg 75deg auto"
+                                    max-camera-orbit="180deg 75deg auto"
+                                >
+                                  
+                                    <!-- HOOD Hotspot -->
+                                    <button 
+                                        class="Hotspot hotspot-hood" 
+                                        slot="hotspot-1" 
+                                        data-position="0.06376826927779611m 0.6669125313448669m 1.699995487541215m" 
+                                        data-normal="0.037514281163154646m 0.8794762410637298m 0.47446203231999945m" 
+                                        data-title="HOOD"
+                                        data-description="Aerodynamic hood design with smooth curves."
+                                        data-visibility-attribute="visible"
+                                        
+                                    >
+                                     <div class="hotspot-info" id="hotspotInfo">
+                                        <h3 id="hotspotTitle">dddd</h3>
+                                        <p id="hotspotDesc">dffd</p>
+                                    </div>
+                                        HOOD
+                                    </button>
+
+                                    <!-- WHEEL Hotspot -->
+                                    <button 
+                                        class="Hotspot hotspot-wheel" 
+                                        slot="hotspot-3" 
+                                        data-position="0.895525280361404m 0.2830649692738057m -1.2950993874334988m" 
+                                        data-normal="0.9999897463312347m 0.0014039259817752337m -0.004305371555475168m" 
+                                        data-title="WHEEL"
+                                        data-description="Sporty alloy wheels for superior grip."
+                                        data-visibility-attribute="visible"
+                                    >
+                                        WHEEL
+                                    </button>
+
+                                    <!-- INTERIOR Hotspot -->
+                                    <button 
+                                        class="Hotspot hotspot-interior" 
+                                        slot="hotspot-6" 
+                                        data-position="-0.5972870739545026m 0.8889253420317516m 0.01134328550300745m" 
+                                        data-normal="-0.8393446894884361m 0.5430876604368507m -0.023585701363085774m" 
+                                        data-title="INTERIOR"
+                                        data-description="Luxury leather seats with advanced dashboard."
+                                        data-visibility-attribute="visible"
+                                    >
+                                    INTERIOR
+                                    </button>
+
+                                    <!-- LOGO Hotspot -->
+                                    <button 
+                                        class="Hotspot hotspot-logo" 
+                                        slot="hotspot-8" 
+                                        data-position="0.0011446030263504436m 0.5344783616738681m 2.1113380512373414m" 
+                                        data-normal="-0.0035322529079464256m 0.8976048043908125m 0.44078695344114455m" 
+                                        data-title="PORSCHE LOGO"
+                                        data-description="Iconic Porsche emblem on the hood."
+                                        data-visibility-attribute="visible"
+                                    >LOGO
+                                    </button>
+
+                                </model-viewer>
+
+                                <!-- Info Popup -->
+                                <div class="hotspot-info" id="hotspotInfo">
+                                <h3 id="hotspotTitle">Title</h3>
+                                <p id="hotspotDesc">Description</p>
+                                </div>
+                            </div>
+                        </div>
+
+        </section>
+
     </main>
     <script src="home.js"></script>
 </body>
