@@ -265,3 +265,71 @@ h1:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 28px var(--boxshadow);
 }
+.s1div2{
+    width: 679px;
+    height: 181.756px;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.s1d21{
+    width: 603.751px;
+    height: 381.756px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* CONTAINER that holds ellipse + model */
+.modeldiv{
+    width: 574.879px;
+    height: 381.756px;
+    position: relative;
+    margin-top: 50px;
+        overflow: hidden;
+}
+
+/* Ellipse / stand */
+.modelstand{
+    width: 100%;
+    height: 154.808px;
+    background-image: url(assets/Ellipse\ 100.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+       bottom: 70px;
+    z-index: 1;
+}
+
+/* 3D Model */
+model-viewer{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    bottom: -10px; /* 👈 pushes car ABOVE the ellipse */
+    transform: translateX(-50%) scale(2);
+    z-index: 2;
+    overflow: hidden;
+}
+.colorsdiv{
+    width: 22px;
+height:182.673px;
+display: flex;
+align-self: center;
+flex-direction: column;
+justify-content: space-between;
+}
+.colorc{
+    width: 30.464px;
+height: 30.464px;
+border-radius: 30.464px;
+border: 0.774px solid #FFF
+}
+.c1{background:  #DA1111;}
+.c2{background:  #000;}
+.c3{background: var(--white);}
+.c4{background: #43A44C;}
+.c5{background: #37578B;}

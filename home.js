@@ -5,16 +5,14 @@ window.addEventListener('DOMContentLoaded', () => {
         const scrollLeft = carContainer.scrollLeft;
         const maxScrollLeft = carContainer.scrollWidth - carContainer.clientWidth;
 
-        // How much the container would scroll
         const proposedScroll = scrollLeft + e.deltaY;
 
         if (proposedScroll >= 0 && proposedScroll <= maxScrollLeft) {
-            // Scroll horizontally and prevent vertical scroll
+          
             e.preventDefault();
             carContainer.scrollLeft = proposedScroll;
         }
-        // If proposedScroll < 0 (start) or > maxScrollLeft (end), do nothing
-        // → vertical scroll will happen naturally
+    
     }, { passive: false });
 });
 
@@ -64,4 +62,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+});
+// Save selected model and redirect
+document.querySelectorAll('.cd').forEach(card => {
+    card.addEventListener('click', () => {
+        const modelSrc = card.dataset.model;
+        if (!modelSrc) return; // safety check
+
+        localStorage.setItem('selectedModel', modelSrc);
+        window.location.href = 'shop.html';
+    });
 });

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>shop</title>
     <link rel="stylesheet" href="shop.css">
+     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body>
    <header>
@@ -39,6 +40,27 @@
                             </DIV>
                         </button>
                         <button class="book">BOOK CONSALATION</button>
+                    </div>
+                </div>
+                <div class="s1div2">
+                    <div class="s1d21">
+                        <div class="modeldiv">
+                            <model-viewer
+                                id="mainCar"
+                                alt="3D Porsche"
+                                
+                                disable-zoom
+                                camera-orbit="-45deg 85deg"
+                            ></model-viewer>
+                        </div>
+                        <div class="modelstand"></div>
+                    </div>
+                    <div class="colorsdiv">
+                        <div class="colorc c1" data-color="#DA1111"></div>
+                        <div class="colorc c2" data-color="#000000"></div>
+                        <div class="colorc c3" data-color="#ffffff"></div>
+                        <div class="colorc c4" data-color="#43A44C"></div>
+                        <div class="colorc c5" data-color="#37578B"></div>
                     </div>
                 </div>
             </div>
