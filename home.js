@@ -63,11 +63,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
-// Save selected model and redirect
 document.querySelectorAll('.cd').forEach(card => {
     card.addEventListener('click', () => {
         const modelSrc = card.dataset.model;
-        if (!modelSrc) return; // safety check
 
         localStorage.setItem('selectedModel', modelSrc);
         window.location.href = 'shop.html';

@@ -3,18 +3,14 @@ window.addEventListener('DOMContentLoaded', () => {
     const colorButtons = document.querySelectorAll('.colorc');
     const savedModel = localStorage.getItem('selectedModel');
 
-    // Set the selected model
     if (savedModel) {
         viewer.setAttribute('src', savedModel);
     }
 
-    // Store the last clicked color
     let pendingColor = null;
 
-    // Function to apply color safely
     function applyColor(color) {
         if (!viewer.model) {
-            // Model not loaded yet, store color
             pendingColor = color;
             return;
         }
@@ -33,7 +29,6 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Listen to clicks on color buttons
     colorButtons.forEach(btn => {
         btn.addEventListener('click', () => {
             const color = btn.dataset.color;
@@ -41,11 +36,47 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // When model is loaded, apply pending color if any
     viewer.addEventListener('model-load', () => {
         if (pendingColor) {
             applyColor(pendingColor);
             pendingColor = null;
         }
+    });
+});
+window.addEventListener('DOMContentLoaded', () => {
+    const wrapper = document.querySelector('.child2-wrapper');
+
+    wrapper.addEventListener('wheel', (e) => {
+        const scrollLeft = wrapper.scrollLeft;
+        const maxScrollLeft = wrapper.scrollWidth - wrapper.clientWidth;
+
+        const proposedScroll = scrollLeft + e.deltaY;
+
+        // Only prevent default if we are within horizontal scroll range
+        if (proposedScroll > 0 && proposedScroll < maxScrollLeft) {
+            e.preventDefault();
+            wrapper.scrollLeft = proposedScroll;
+        }
+        // If at edges, allow default vertical scrolling
+    }, { passive: false });
+});
+window.addEventListener('DOMContentLoaded', () => {
+    const scrollContainer = document.querySelector('.child2-wrapper');
+    const indicator = document.querySelector('.dd1');
+    const steps = document.querySelectorAll('.dd2').length + 1;
+
+    scrollContainer.addEventListener('scroll', () => {
+        const maxScroll =
+            scrollContainer.scrollWidth - scrollContainer.clientWidth;
+
+        const progress = scrollContainer.scrollLeft / maxScroll;
+
+        const stepWidth =
+            document.querySelector('.sdiv').offsetWidth / steps;
+
+        const currentStep = Math.round(progress * (steps - 1));
+
+        indicator.style.transform =
+            `translateX(${currentStep * stepWidth}px)`;
     });
 });
