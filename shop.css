@@ -28,6 +28,8 @@
     --seemoree: rgba(255, 188, 0, 0.40);
     --linee:rgba(255, 255, 255, 0.54);
     --mph:#A7A7A7;
+    --backkk:rgba(0,0,0,0.5);
+    --overlay: rgba(0, 0, 0, 0.38);
 }
 body {
   overflow-x: hidden;
@@ -730,7 +732,7 @@ h1:hover {
 .s5 {
     width: 100%; /* full width */
    height: 750px; /* allow space for cars */
-    background-color: #000;
+    background-color:var(--black);
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -740,7 +742,7 @@ h1:hover {
 }
 
 .youmay {
-    color: #FFB800;
+    color:var(--yellow);
     text-align: center;
     font-family: "ex";
     font-size: 48px;
@@ -838,8 +840,8 @@ background-clip: text;
     top: 50%;
     transform: translateY(-50%);
     font-size: 50px;
-    background: rgba(0,0,0,0.5);
-    color: white;
+    background:var(--backkk);
+    color: var(--white);
     border: none;
     cursor: pointer;
     z-index: 10;
@@ -850,3 +852,147 @@ background-clip: text;
 
 .scroll-btn.left { left: 10px; }
 .scroll-btn.right { right: 10px; }
+
+.s6 {
+    position: relative;
+    width: 100%;
+    height: 839px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Rotated video */
+.s6 .background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    z-index: 0;
+}
+
+/* Overlay on video */
+.s6 .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:var(--overlay); /* your overlay */
+    z-index: 1;
+}
+
+/* Content on top of overlay */
+.s6 .video-content {
+    position: relative;
+    z-index: 2; /* above video and overlay */
+    width: 1291px;
+    height: 738px;
+    border-radius: 49px;
+    background: rgba(255, 255, 255, 0.10);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.vdiv1{
+    display: flex;
+    width: 1099px;
+    flex-direction: column;
+    align-items: center;
+    gap: 66px;
+}
+.exp{
+    color: var(--yellow);
+    text-align: center;
+    font-family: "ex";
+    font-size: 40px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 39.247px; /* 98.117% */
+    letter-spacing: -0.511px;
+}
+.p3{
+    color:var(--black);
+    text-align: center;
+    font-family: 'po';
+    font-size: 29.435px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 47.832px; /* 162.5% */
+    letter-spacing: -0.719px;
+    width: 1067.836px;
+}
+.ebtdiv{
+    display: flex;
+    width: 812px;
+    height: 98px;
+    padding-right: 0.013px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 39.247px;
+    flex-direction: row;
+}
+.testdrivebt{
+    display: inline-flex;
+    height: 98.117px;
+    padding: 28.617px 60.718px 29.499px 60.776px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 27435362px;
+    background:var(--yellow);
+    color: var(--black);
+    text-align: center;
+    font-family: "ex";
+    font-size: 26.164px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 39.247px; /* 150% */
+    letter-spacing: -0.511px;
+}
+.conbt{
+    display: flex;
+    width: 410.787px;
+    height: 98.117px;
+    padding: 28.617px 68.105px 29.499px 68.682px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 27435362px;
+    border: 3.271px solid var(y);
+    color:var(--yellow);
+    text-align: center;
+    font-family: "ex";
+    font-size: 26.164px;
+    font-style: normal;
+    background-color: transparent;
+    font-weight: 900;
+    line-height: 39.247px; /* 150% */
+    letter-spacing: -0.511px;
+}
+.vd2{
+    display: inline-flex;
+align-items: center;
+gap: 131px;
+flex-direction: row;
+}
+.vd3{
+
+height: 98px;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+.start{
+    color:var(--yellow);
+text-align: center;
+font-family: 'po';
+font-size: 32.571px;
+font-style: normal;
+font-weight: 400;
+line-height: 48.857px; /* 150% */
+letter-spacing: -0.636px;
+}
+.sb{color: var(--black);}
