@@ -1131,3 +1131,1759 @@ align-items: flex-start;
 flex-direction: row;
 gap: 24px;
 }
+
+/* ========================================
+   MOBILE RESPONSIVE STYLES - 440px Breakpoint
+   ======================================== */
+
+/* BURGER MENU STYLES - Hidden by default, only shows on mobile */
+.burger-menu {
+    display: none; /* Hidden on desktop */
+}
+
+.burger-line {
+    width: 25px;
+    height: 3px;
+    background-color: var(--white);
+    transition: all 0.3s ease;
+}
+
+.burger-menu.active .burger-line:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+}
+
+.burger-menu.active .burger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.active .burger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Menu overlay - Hidden by default */
+.menu-overlay {
+    display: none;
+}
+
+@media screen and (max-width: 440px) {
+    
+    /* HEADER & NAVIGATION */
+    header {
+        top: 10px;
+        padding: 0 20px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    /* Show burger menu ONLY on mobile */
+    .burger-menu {
+        display: flex; /* Now visible on mobile */
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        padding: 10px;
+        background: var(--back);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border-radius: 10px;
+        border: 1px solid var(--boarder);
+        z-index: 1001;
+        transition: transform 0.3s ease;
+        pointer-events: auto;
+    }
+    
+    .burger-menu:hover {
+        transform: scale(1.05);
+    }
+    
+    /* Hide desktop navigation, convert to mobile menu */
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 70%;
+        max-width: 300px;
+        padding: 80px 30px 30px;
+        gap: 30px;
+        border-radius: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        transition: right 0.4s ease;
+        background: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: none;
+        border-left: 1px solid var(--boarder);
+        pointer-events: auto;
+    }
+    
+    nav.active {
+        right: 0;
+    }
+    
+    nav h1 {
+        font-size: 24px;
+        color: var(--white);
+        width: 100%;
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+    }
+    
+    nav h1:hover {
+        color: var(--yellow);
+        padding-left: 10px;
+    }
+    
+    nav h1.selected {
+        color: var(--yellow);
+    }
+    
+    .white {
+        font-size: 28px;
+        color: var(--yellow) !important;
+    }
+    
+    /* Hide decorative lines on mobile */
+    .nline {
+        display: none;
+    }
+    
+    /* Mobile overlay when menu is open */
+    .menu-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+    
+    .menu-overlay.active {
+        display: block;
+        pointer-events: auto;
+        opacity: 1;
+    }
+    
+    /* SECTION 1 - HERO */
+    .s1 {
+        height: auto;
+        min-height: 600px;
+        padding: 80px 0 20px;
+    }
+    
+    .s1d1 {
+        height: 300px;
+    }
+    
+    .s1d1child {
+        width: 90%;
+        max-width: 350px;
+        height: 280px;
+    }
+    
+    .p1, .p3 {
+        width: 100px;
+        height: 180px;
+    }
+    
+    .p2 {
+        width: 120px;
+        height: 280px;
+    }
+    
+    .p4 {
+        height: 50px;
+        width: 90%;
+    }
+    
+    .p911 {
+        font-size: 180px;
+        top: 70%;
+    }
+    
+    .s1car {
+        width: 100%;
+        max-width: 400px;
+        height: 180px;
+        top: 200px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .explorebt {
+        padding: 8px 20px;
+        gap: 15px;
+        left: 50%;
+        top: 500px;
+        transform: translateX(-50%);
+    }
+    
+    .explore {
+        font-size: 18px;
+    }
+    
+    .arrowcircle {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .arrow {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .title {
+        font-size: 60px;
+        margin-top: 30px;
+    }
+    
+    /* SECTION 2 - ABOUT */
+    .s2 {
+        height: auto;
+        min-height: 600px;
+        margin-top: 0;
+    }
+    
+    .s2div {
+        width: 100%;
+        height: auto;
+    }
+    
+    .s2d1 {
+        width: 100vw;
+        height: auto;
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+    
+    .line {
+       width: 100vw;
+    }
+    
+    .porshe {
+        font-size: 28px;
+        text-align: center;
+    }
+    
+    .s2d2 {
+        width: 100vw;
+        height: auto;
+        margin-top: 20px;
+        padding: 20px;
+    }
+    
+    .s2d2 p {
+        width: 100%;
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    
+    .s2img {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        margin-top: 20px;
+    }
+    
+    .learnbt {
+        padding: 10px 25px;
+        gap: 15px;
+        align-self: center;
+        margin-top: 20px;
+    }
+    
+    /* SECTION 3 - COLLECTION */
+    .s3 {
+        height: auto;
+        min-height: 500px;
+    }
+    
+    .s3d1 {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .thecollection {
+        width: 100%;
+        height: 150px;
+    }
+    
+    .tc {
+        font-size: 48px;
+        width: auto;
+        text-align: center;
+    }
+    
+    .car-wrapper {
+        width: 100%;
+        height: 400px;
+        margin-left: 0;
+    }
+    
+    .carssd {
+        padding-left: 20px;
+        gap: 15px;
+    }
+    
+    .cd {
+        width: 300px;
+        height: 380px;
+        padding: 15px;
+    }
+    
+    .carname {
+        font-size: 14px;
+    }
+    
+    .car3d {
+        width: 100%;
+        height: 180px;
+    }
+    
+    .carinfo {
+        font-size: 13px;
+        width: 100%;
+    }
+    
+    .carprice {
+        font-size: 28px;
+    }
+    
+    .scrolld {
+        width: 100%;
+        padding: 20px;
+        justify-content: center;
+    }
+    
+    .st {
+        font-size: 24px;
+    }
+    
+    .arrow2 {
+        width: 100px;
+    }
+    
+    /* SECTION 4 - VIDEO */
+    .s4 {
+        height: 60vh;
+        min-height: 400px;
+    }
+    
+    .s4video {
+        transform: translate(-50%, -50%) rotate(-90deg);
+        width: 100vh;
+        height: 100vw;
+    }
+    
+    .videotext {
+        font-size: 26px;
+        width: 90%;
+        top: 85%;
+    }
+    
+    /* SECTION 5 - RACE/COLOR SELECTOR */
+    .s5 {
+        height: auto;
+        min-height: 700px;
+        padding: 40px 20px;
+    }
+    
+    .s5d1 {
+        justify-content: flex-start;
+        gap: 90px;
+        padding-top: 60px;
+        width: 100vw;
+    }
+    
+    .carname2 {
+        font-size: 32px;
+        text-align: center;
+    }
+    
+    .race {
+        font-size: 180px;
+        margin-top: -60px;
+    }
+    
+    .colorandbtdiv {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        margin-left: 0;
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+    
+    .colordiv {
+        width: 100%;
+        max-width: 250px;
+        justify-content: space-around;
+    }
+    
+    .colorbt {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .divcolorcar {
+        width: 100%;
+        max-width: 400px;
+        height: 400px;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .color3dmodeldiv {
+        width: 100%;
+        height: 350px;
+    }
+    
+    .d3 {
+        width: 200%;
+        height: 200%;
+    }
+    
+    .circlecolor {
+        width: 100%;
+        height: 200px;
+    }
+    
+    /* SECTION 6 - SPECS */
+    .s6 {
+        height: auto;
+        min-height: 700px;
+        padding: 40px 20px;
+        align-items: center;
+    }
+    
+    .s6d1 {
+        width: 100%;
+        height: auto;
+    }
+    
+    .s6titlediv {
+        width: 100%;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .s6title {
+        font-size: 32px;
+        text-align: center;
+    }
+    
+    .s6line {
+        width: 100%;
+    }
+    
+    .s6d2 {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        gap: 30px;
+        padding: 30px 0;
+    }
+    
+    .s6list {
+        padding-left: 20px;
+    }
+    
+    .s6list li {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    
+    .s6img {
+        width: 100%;
+        height: 300px;
+    }
+    
+    .photosdiv{
+        flex-direction: column;
+        display: flex;
+        height: 1000px;
+    }
+    /* FOOTER */
+    footer {
+        height: auto;
+        padding: 40px 20px;
+        gap: 40px;
+    }
+    
+    .fd1 {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        width: 100%;
+        height: auto;
+    }
+    
+    .fchild, .fchild2, .fchild3, .fchild4 {
+        width: 100%;
+        grid-column: auto;
+    }
+    
+    .child2d {
+        height: auto;
+    }
+    
+    .ql {
+        font-size: 18px;
+    }
+    
+    .porschee {
+        font-size: 20px;
+    }
+    
+    .fdes {
+        font-size: 14px;
+        width: 100%;
+    }
+    
+    .sdiv {
+        flex-wrap: wrap;
+    }
+    
+    .contactusd {
+        height: auto;
+        gap: 20px;
+    }
+    
+    .cd1 {
+        height: auto;
+        flex-wrap: wrap;
+    }
+    
+    .pp {
+        width: 100%;
+    }
+    
+    .footerf {
+        padding: 20px;
+    }
+    
+    .ffchild {
+        flex-direction: column;
+        height: auto;
+        gap: 15px;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .policy {
+        flex-direction: column;
+        height: auto;
+        gap: 10px;
+        align-items: center;
+    }
+    
+    .copy {
+        font-size: 12px;
+    }
+}
+
+/* TABLET BREAKPOINT (optional - for better scaling) */
+@media screen and (min-width: 441px) and (max-width: 768px) {
+    nav {
+        gap: 30px;
+        padding: 12px 30px;
+    }
+    
+    .s1d1child {
+        width: 500px;
+        height: 400px;
+    }
+    
+    .p911 {
+        font-size: 280px;
+    }
+    
+    .title {
+        font-size: 90px;
+    }
+    
+    .s2div {
+        width: 90%;
+    }
+    
+    .cd {
+        width: 340px;
+    }
+    
+    .race {
+        font-size: 450px;
+    }
+    
+    .s6d1 {
+        width: 90%;
+    }
+}
+
+
+/* BURGER MENU STYLES - Hidden by default, only shows on mobile */
+.burger-menu {
+    display: none; /* Hidden on desktop */
+}
+
+.burger-line {
+    width: 25px;
+    height: 3px;
+    background-color: var(--white);
+    transition: all 0.3s ease;
+}
+
+.burger-menu.active .burger-line:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+}
+
+.burger-menu.active .burger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.active .burger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+.menu-overlay {
+    display: none;
+}
+
+@media screen and (max-width: 440px) {
+    
+    header {
+        top: 10px;
+        padding: 0 20px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    /* Show burger menu ONLY on mobile */
+    .burger-menu {
+        display: flex; /* Now visible on mobile */
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        padding: 10px;
+        background: var(--back);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border-radius: 10px;
+        border: 1px solid var(--boarder);
+        z-index: 1001;
+        transition: transform 0.3s ease;
+        pointer-events: auto;
+    }
+    
+    .burger-menu:hover {
+        transform: scale(1.05);
+    }
+    
+    /* Hide desktop navigation, convert to mobile menu */
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 70%;
+        max-width: 300px;
+        padding: 80px 30px 30px;
+        gap: 30px;
+        border-radius: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        transition: right 0.4s ease;
+        background: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: none;
+        border-left: 1px solid var(--boarder);
+        pointer-events: auto;
+    }
+    
+    nav.active {
+        right: 0;
+    }
+    
+    nav h1 {
+        font-size: 24px;
+        color: var(--white);
+        width: 100%;
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+    }
+    
+    nav h1:hover {
+        color: var(--yellow);
+        padding-left: 10px;
+    }
+    
+    nav h1.selected {
+        color: var(--yellow);
+    }
+    
+    .white {
+        font-size: 28px;
+        color: var(--yellow) !important;
+    }
+    
+    /* Hide decorative lines on mobile */
+    .nline {
+        display: none;
+    }
+    
+    /* Mobile overlay when menu is open */
+    .menu-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+    
+    .menu-overlay.active {
+        display: block;
+        pointer-events: auto;
+        opacity: 1;
+    }
+    
+    /* SECTION 1 - HERO */
+    .s1 {
+        height: auto;
+        min-height: 500px;
+        padding: 80px 0 20px;
+    }
+    
+    .s1d1 {
+        height: 300px;
+    }
+    
+    .s1d1child {
+        width: 90%;
+        max-width: 350px;
+        height: 280px;
+    }
+    
+    .p1, .p3 {
+        width: 100px;
+        height: 180px;
+    }
+    
+    .p2 {
+        width: 120px;
+        height: 280px;
+    }
+    
+    .p4 {
+        height: 50px;
+        width: 90%;
+    }
+    
+    .p911 {
+        font-size: 180px;
+        top: 70%;
+    }
+    
+    .s1car {
+        width: 100%;
+        max-width: 400px;
+        height: 180px;
+        top: 200px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .explorebt {
+        padding: 8px 20px;
+        gap: 15px;
+        left: 50%;
+        top: 380px;
+        transform: translateX(-50%);
+    }
+    
+    .explore {
+        font-size: 18px;
+    }
+    
+    .arrowcircle {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .arrow {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .title {
+        font-size: 60px;
+        margin-top: 30px;
+    }
+    
+    /* SECTION 2 - ABOUT */
+    .s2 {
+        height: auto;
+        min-height: 600px;
+        padding: 40px 20px;
+        margin-top: 0;
+    }
+    
+    .s2div {
+        width: 100%;
+        height: auto;
+    }
+    
+    .s2d1 {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+    
+    .line {
+        width: 100%;
+    }
+    
+    .porshe {
+        font-size: 28px;
+        text-align: center;
+    }
+    
+    .s2d2 {
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+        padding: 20px;
+    }
+    
+    .s2d2 p {
+        width: 100%;
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    
+    .s2img {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        margin-top: 20px;
+    }
+    
+    .learnbt {
+        padding: 10px 25px;
+        gap: 15px;
+        align-self: center;
+        margin-top: 20px;
+    }
+    
+    /* SECTION 3 - COLLECTION */
+    .s3 {
+        height: auto;
+        min-height: 500px;
+    }
+    
+    .s3d1 {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .thecollection {
+        width: 100%;
+        height: 150px;
+    }
+    
+    .tc {
+        font-size: 48px;
+        width: auto;
+        text-align: center;
+    }
+    
+    .car-wrapper {
+        width: 100%;
+        height: 400px;
+        margin-left: 0;
+    }
+    
+    .carssd {
+        padding-left: 20px;
+        gap: 15px;
+    }
+    
+    .cd {
+        width: 300px;
+        height: 380px;
+        padding: 15px;
+    }
+    
+    .carname {
+        font-size: 14px;
+    }
+    
+    .car3d {
+        width: 100%;
+        height: 180px;
+    }
+    
+    .carinfo {
+        font-size: 13px;
+        width: 100%;
+    }
+    
+    .carprice {
+        font-size: 28px;
+    }
+    
+    .scrolld {
+        width: 100%;
+        padding: 20px;
+        justify-content: center;
+    }
+    
+    .st {
+        font-size: 24px;
+    }
+    
+    .arrow2 {
+        width: 100px;
+    }
+    
+    /* SECTION 4 - VIDEO */
+    .s4 {
+        height: 60vh;
+        min-height: 400px;
+    }
+    
+    .s4video {
+        transform: translate(-50%, -50%) rotate(-90deg);
+        width: 100vh;
+        height: 100vw;
+    }
+    
+    .videotext {
+        font-size: 36px;
+        width: 90%;
+        top: 85%;
+    }
+    
+    /* SECTION 5 - RACE/COLOR SELECTOR */
+    .s5 {
+        height: auto;
+        min-height: 700px;
+        padding: 40px 20px;
+    }
+    
+    .s5d1 {
+        justify-content: flex-start;
+        gap: 30px;
+        padding-top: 60px;
+    }
+    
+    .carname2 {
+        font-size: 32px;
+        text-align: center;
+    }
+    
+    .race {
+        font-size: 280px;
+        margin-top: -60px;
+    }
+    
+    .colorandbtdiv {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        margin-left: 0;
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+    
+    .colordiv {
+        width: 100%;
+        max-width: 250px;
+        justify-content: space-around;
+    }
+    
+    .colorbt {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .divcolorcar {
+        width: 100%;
+        max-width: 400px;
+        height: 400px;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .color3dmodeldiv {
+        width: 100%;
+        height: 350px;
+    }
+    
+    .d3 {
+        width: 200%;
+        height: 200%;
+    }
+    
+    .circlecolor {
+        width: 100%;
+        height: 200px;
+    }
+    
+    /* SECTION 6 - SPECS */
+    .s6 {
+        height: auto;
+        min-height: 700px;
+        padding: 40px 20px;
+        align-items: center;
+    }
+    
+    .s6d1 {
+        width: 100%;
+        height: auto;
+    }
+    
+    .s6titlediv {
+        width: 100%;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .s6title {
+        font-size: 32px;
+        text-align: center;
+    }
+    
+    .s6line {
+        width: 100%;
+    }
+    
+    .s6d2 {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        gap: 30px;
+        padding: 30px 0;
+    }
+    
+    .s6list {
+        padding-left: 20px;
+    }
+    
+    .s6list li {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    
+    .s6img {
+        width: 100%;
+        height: 300px;
+    }
+    
+    /* SECTION 7 - HOTSPOTS */
+    .s7 {
+        height: auto;
+        min-height: 900px;
+        padding: 60px 20px 40px;
+    }
+    
+    .porsche911 {
+        gap: 20px;
+        position: relative;
+        z-index: 1;
+    }
+    
+    h6 {
+        font-size: 60px;
+        text-align: center;
+    }
+    
+    .s911 {
+        font-size: 180px;
+        margin-top: -40px;
+        text-align: center;
+    }
+    
+    .s7d {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        position: relative;
+        transform: none;
+        top: auto;
+        left: auto;
+        gap: 30px;
+        margin-top: 40px;
+    }
+    
+    .hotspotscar {
+        width: 100%;
+        height: 200px;
+        margin: 0 auto;
+    }
+    
+    .hun {
+        transform: scale(1.8);
+    }
+    
+    .Hotspot {
+        width: 40px;
+        height: 18px;
+        font-size: 7px;
+        padding: 2px;
+    }
+    
+    .photosdiv {
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin-top: 20px;
+    }
+    
+    .photo {
+        width: 100%;
+        height: 140px;
+        background-position: center;
+    }
+    
+    .hood {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .interior {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .logoo {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .wheel {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .photo-overlay {
+        padding: 12px;
+    }
+    
+    .photo-overlay h4 {
+        font-size: 11px;
+        margin-bottom: 4px;
+    }
+    
+    .photo-overlay p {
+        font-size: 9px;
+        line-height: 1.3;
+    }
+    
+    .photo.active {
+        transform: scale(1.05);
+    }
+    
+    /* FOOTER */
+    footer {
+        height: auto;
+        padding: 40px 20px;
+        gap: 40px;
+    }
+    
+    .fd1 {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        width: 100%;
+        height: auto;
+    }
+    
+    .fchild, .fchild2, .fchild3, .fchild4 {
+        width: 100%;
+        grid-column: auto;
+    }
+    
+    .child2d {
+        height: auto;
+    }
+    
+    .ql {
+        font-size: 18px;
+    }
+    
+    .porschee {
+        font-size: 20px;
+    }
+    
+    .fdes {
+        font-size: 14px;
+        width: 100%;
+    }
+    
+    .sdiv {
+        flex-wrap: wrap;
+    }
+    
+    .contactusd {
+        height: auto;
+        gap: 20px;
+    }
+    
+    .cd1 {
+        height: auto;
+        flex-wrap: wrap;
+    }
+    
+    .pp {
+        width: 100%;
+    }
+    
+    .footerf {
+        padding: 20px;
+    }
+    
+    .ffchild {
+        flex-direction: column;
+        height: auto;
+        gap: 15px;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .policy {
+        flex-direction: column;
+        height: auto;
+        gap: 10px;
+        align-items: center;
+    }
+    
+    .copy {
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width: 441px) and (max-width: 1024px) {
+    
+    /* HEADER & NAVIGATION */
+    header {
+        top: 15px;
+        padding: 0 30px;
+    }
+    
+    nav {
+        padding: 12px 30px;
+        gap: 40px;
+    }
+    
+    h1 {
+        font-size: 18px;
+    }
+    
+    .white {
+        font-size: 22px;
+    }
+    
+    .nline {
+        width: 50px;
+    }
+    
+    /* SECTION 1 - HERO */
+    .s1 {
+        height: 600px;
+    }
+    
+    .s1d1 {
+        height: 400px;
+    }
+    
+    .s1d1child {
+        width: 500px;
+        height: 400px;
+    }
+    
+    .p1, .p3 {
+        width: 140px;
+        height: 270px;
+    }
+    
+    .p2 {
+        width: 165px;
+        height: 400px;
+    }
+    
+    .p4 {
+        height: 70px;
+    }
+    
+    .p911 {
+        font-size: 280px;
+        top: 72%;
+    }
+    
+    .s1car {
+        width: 600px;
+        height: 268px;
+        top: 250px;
+    }
+    
+    .explorebt {
+        padding: 10px 28px;
+        gap: 18px;
+        left: 65%;
+        top: 68%;
+    }
+    
+    .explore {
+        font-size: 22px;
+    }
+    
+    .arrowcircle {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .arrow {
+        width: 22px;
+        height: 22px;
+    }
+    
+    .title {
+        font-size: 90px;
+        margin-top: 40px;
+    }
+    
+    /* SECTION 2 - ABOUT */
+    .s2 {
+        height: 800px;
+        padding: 40px 30px;
+        margin-top: -40px;
+    }
+    
+    .s2div {
+        width: 95%;
+        max-width: 900px;
+    }
+    
+    .s2d1 {
+        width: 100%;
+        height: 60px;
+    }
+    
+    .line {
+        width: 500px;
+    }
+    
+    .porshe {
+        font-size: 40px;
+    }
+    
+    .s2d2 {
+        width: 100%;
+        height: 320px;
+        margin-top: 30px;
+    }
+    
+    .s2d2 p {
+        width: 450px;
+        font-size: 15px;
+    }
+    
+    .s2img {
+        width: 800px;
+        height: 320px;
+    }
+    
+    .learnbt {
+        padding: 12px 32px;
+        gap: 20px;
+        margin-top: 20px;
+    }
+    
+    /* SECTION 3 - COLLECTION */
+    .s3 {
+        height: 480px;
+    }
+    
+    .s3d1 {
+        height: 400px;
+    }
+    
+    .thecollection {
+        width: 320px;
+        height: 400px;
+    }
+    
+    .tc {
+        font-size: 56px;
+        width: 240px;
+    }
+    
+    .car-wrapper {
+        height: 400px;
+        margin-left: -15px;
+    }
+    
+    .carssd {
+        padding-left: 15px;
+    }
+    
+    .cd {
+        width: 340px;
+        height: 400px;
+    }
+    
+    .carname {
+        font-size: 15px;
+    }
+    
+    .car3d {
+        width: 310px;
+        height: 206px;
+    }
+    
+    .carinfo {
+        font-size: 15px;
+        width: 220px;
+    }
+    
+    .carprice {
+        font-size: 30px;
+    }
+    
+    .scrolld {
+        width: 350px;
+        height: 55px;
+    }
+    
+    .st {
+        font-size: 28px;
+    }
+    
+    .arrow2 {
+        width: 140px;
+    }
+    
+    /* SECTION 4 - VIDEO */
+    .s4 {
+        height: 80vh;
+        min-height: 600px;
+    }
+    
+    .videotext {
+        font-size: 72px;
+        width: 900px;
+        top: 82%;
+    }
+    
+    /* SECTION 5 - RACE/COLOR SELECTOR */
+    .s5 {
+        height: 900px;
+    }
+    
+    .s5d1 {
+        justify-content: space-around;
+    }
+    
+    .carname2 {
+        font-size: 56px;
+    }
+    
+    .race {
+        font-size: 500px;
+        margin-top: -100px;
+    }
+    
+    .colorandbtdiv {
+        width: 700px;
+        height: 90px;
+        margin-left: 250px;
+        gap: 100px;
+    }
+    
+    .colordiv {
+        width: 300px;
+        height: 36px;
+    }
+    
+    .colorbt {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .divcolorcar {
+        width: 800px;
+        height: 530px;
+        top: 22%;
+    }
+    
+    .color3dmodeldiv {
+        width: 750px;
+        height: 470px;
+    }
+    
+    .d3 {
+        width: 210%;
+        height: 210%;
+    }
+    
+    .circlecolor {
+        width: 800px;
+        height: 270px;
+    }
+    
+    /* SECTION 6 - SPECS */
+    .s6 {
+        height: 800px;
+        padding: 30px 40px;
+    }
+    
+    .s6d1 {
+        width: 95%;
+        max-width: 1100px;
+        height: 650px;
+    }
+    
+    .s6titlediv {
+        width: 100%;
+    }
+    
+    .s6title {
+        font-size: 42px;
+    }
+    
+    .s6line {
+        width: 500px;
+    }
+    
+    .s6d2 {
+        width: 100%;
+        max-width: 950px;
+        height: auto;
+        margin-top: 40px;
+    }
+    
+    .s6list li {
+        font-size: 20px;
+    }
+    
+    .s6img {
+        width: 500px;
+        height: 500px;
+    }
+    
+    /* SECTION 7 - HOTSPOTS */
+    .s7 {
+        height: 750px;
+    }
+    
+    .porsche911 {
+        gap: 70px;
+    }
+    
+    h6 {
+        font-size: 160px;
+    }
+    
+    .s911 {
+        font-size: 580px;
+        margin-top: -110px;
+    }
+    
+    .s7d {
+        width: 950px;
+        height: 550px;
+    }
+    
+    .hotspotscar {
+        width: 800px;
+        height: 365px;
+    }
+    
+    .hun {
+        transform: scale(1.8);
+    }
+    
+    .Hotspot {
+        width: 48px;
+        height: 22px;
+        font-size: 8.5px;
+    }
+    
+    .photosdiv {
+        width: 960px;
+        height: 170px;
+        margin-top: 35px;
+    }
+    
+    .photo {
+        transition: transform 0.4s ease;
+    }
+    
+    .hood {
+        width: 230px;
+        height: 170px;
+    }
+    
+    .interior {
+        width: 365px;
+        height: 170px;
+    }
+    
+    .logoo {
+        width: 135px;
+        height: 170px;
+    }
+    
+    .wheel {
+        width: 150px;
+        height: 168px;
+    }
+    
+    .photo-overlay h4 {
+        font-size: 13px;
+    }
+    
+    .photo-overlay p {
+        font-size: 10.5px;
+    }
+    
+    /* FOOTER */
+    footer {
+        height: 700px;
+        min-height: 380px;
+        padding: 50px 40px;
+        gap: 50px;
+        justify-content: flex-start;
+    }
+    
+    .fd1 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
+        gap: 40px;
+        width: 95%;
+        max-width: 900px;
+    }
+    
+    .fchild {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    
+    .fchild2 {
+        grid-column: 2;
+        grid-row: 1;
+    }
+    
+    .fchild3 {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    
+    .fchild4 {
+        grid-column: 2;
+        grid-row: 2;
+    }
+    
+    .ql {
+        font-size: 15px;
+    }
+    
+    .porschee {
+        font-size: 15px;
+    }
+    
+    .fdes {
+        font-size: 14px;
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .footerf {
+        padding: 20px 40px 0;
+        width: 95%;
+        max-width: 900px;
+    }
+    
+    .ffchild {
+        flex-direction: row;
+        height: 20px;
+        margin-top: 200px;
+    }
+    
+    .policy {
+        flex-direction: row;
+        gap: 20px;
+    }
+    
+    .copy {
+        font-size: 13px;
+    }
+}
+
+@media screen and (min-width: 441px) and (max-width: 768px) {
+    nav {
+        gap: 30px;
+        padding: 12px 30px;
+    }
+    
+    .s1d1child {
+        width: 500px;
+        height: 400px;
+    }
+    
+    .p911 {
+        font-size: 280px;
+    }
+    
+    .title {
+        font-size: 90px;
+    }
+    
+    .s2div {
+        width: 90%;
+    }
+    
+    .cd {
+        width: 340px;
+    }
+    
+    .race {
+        font-size: 450px;
+    }
+    
+    .s6d1 {
+        width: 90%;
+    }
+}
