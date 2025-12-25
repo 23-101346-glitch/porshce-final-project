@@ -80,3 +80,25 @@ window.addEventListener('DOMContentLoaded', () => {
             `translateX(${currentStep * stepWidth}px)`;
     });
 });
+const scrollContainer = document.querySelector(".carscroll");
+const btnLeft = document.querySelector(".scroll-btn.left");
+const btnRight = document.querySelector(".scroll-btn.right");
+
+const cardWidth = 1200;
+const gap = 120;
+
+btnRight.addEventListener("click", () => {
+    scrollContainer.scrollBy({ left: cardWidth + gap, behavior: "smooth" });
+});
+
+btnLeft.addEventListener("click", () => {
+    scrollContainer.scrollBy({ left: -(cardWidth + gap), behavior: "smooth" });
+});
+
+// Center first card on load
+window.addEventListener("load", () => {
+    const containerWidth = scrollContainer.offsetWidth;
+    const firstCard = scrollContainer.querySelector(".cardiv");
+    const scrollLeft = firstCard.offsetLeft - (containerWidth / 2) + (cardWidth / 2);
+    scrollContainer.scrollLeft = scrollLeft;
+});

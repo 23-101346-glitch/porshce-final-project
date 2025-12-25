@@ -317,7 +317,7 @@ h1:hover {
 
 
 
-model-viewer{
+.model-viewer{
     width: 100%;
     height: 100%;
     position: absolute;
@@ -726,3 +726,127 @@ model-viewer{
 .s4img2:hover::after {
     opacity: 1;
 }
+/* Section container */
+.s5 {
+    width: 100%; /* full width */
+   height: 750px; /* allow space for cars */
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center;
+    padding-top: 40px;
+    box-sizing: border-box;
+}
+
+.youmay {
+    color: #FFB800;
+    text-align: center;
+    font-family: "ex";
+    font-size: 48px;
+    font-style: italic;
+    font-weight: 200;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+/* Carousel wrapper */
+.carousel-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* Scrollable container */
+.carscroll {
+    display: flex;
+    gap: 120px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 0 20px;
+    height: 900px;
+}
+
+.carscroll::-webkit-scrollbar {
+    display: none;
+}
+.carscroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.car1{
+    background: linear-gradient(180deg, #DE2828 70.19%, #000 100%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+.car2{
+    background: linear-gradient(180deg, #DDBB1D 70.19%, #000 100%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+.car3{
+    background: linear-gradient(180deg, #BABABA 0%, #545454 131.55%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+/* Individual card */
+.cardiv {
+    flex: 0 0 1200px;
+    height: 900px;
+    position: relative;
+}
+
+/* Car name */
+.carrname {
+    font-family: "ex";
+    font-size: 200px;
+    font-weight: 900;
+    position: absolute;
+    text-align: center;
+    top: -20px;
+    left: 50%;
+    text-transform: uppercase;
+    transform: translateX(-50%);
+    z-index: 1;
+
+}
+
+/* 3D car container */
+.car3ddiv {
+    width: 100%;
+    height: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: visible;
+    position: relative;
+    z-index: 2;
+}
+
+.car3ddiv model-viewer {
+    margin-top: 260px;
+    transform: scale(3.2);
+}
+
+/* Scroll buttons */
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 50px;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.scroll-btn.left { left: 10px; }
+.scroll-btn.right { right: 10px; }
